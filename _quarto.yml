@@ -1,0 +1,27 @@
+project:
+  type: website
+
+website:
+  title: "Personal notes"
+  search: true
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: latest_overview.qmd
+        text: Latest overview
+      - text: Meet notes
+        menu: 
+          - href: meeting notes/meeting01.qmd
+            text: January
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+editor: visual
+

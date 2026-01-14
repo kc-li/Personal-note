@@ -1,0 +1,12 @@
+# Quarto output
+docs/
+
+# RStudio / R
+.Rproj.user/
+.Rhistory
+.RData
+.RDS
+
+# OS noise
+.DS_Store
+
