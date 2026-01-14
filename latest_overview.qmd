@@ -10,12 +10,13 @@ editor: visual
 
 ## Admin
 
--   Finance new code (both Una Europa, and project)
-    -   e.g. Participants fee for Qi
+-   Finance new code (both Una Europa, and VICI project)
+    -   e.g. Participants fee for Qi & Yuchen
 
 ## Projects ongoing
 
 ### Mandarin question in laboratory phonology
+
 
 -   Focus: Establish the tone–intonation relationship using traditional laboratory phonology approaches, with particular emphasis on variability in realisation.
 
@@ -23,12 +24,12 @@ editor: visual
 
 -   Current status:
 
-    -   Original 8 people, using PCA for f0 alone
-        -   TAI proceeding paper, LabPhon abstract (late Jan/Feb)
-    -   New recording done till 15 people, perhaps adding 1 more speaker(?)
+    -   Original **8** people, using PCA for f0 alone
+        -   ✅ TAI proceeding paper, LabPhon abstract (late Jan/Feb)  
+    -   New recording done till **15** people, perhaps adding 1 more speaker(❓)
     -   LIBC intern students in the process of checking annotation
         -   In the process of marking three time points: syllable start; rhyme start; ending
-        -   Upcoming meeting: 2025-01-15, plan for talking about extracting data and check filter f0 qualities
+        -   Meeting on 2025-01-15, plan for talking about extracting data and check filter f0 qualities
 
 -   Some 'side-products' out of this:
 
@@ -36,34 +37,62 @@ editor: visual
     -   Customizable praat script facilitating checking process
     -   ShinyAPP to check f0 outliers, either by contour or fPCA data (in developement)
 
--   Next steps:
+**Next steps:**
 
-    -   Finish the interactive scripts marking (by Jan 15)
-    -   Finish the new dataset annotation and analysis (by Jan 31)
-    -   Start to think of the article
-        -   Use the collaborative dataset to explore patterns of variation through both parametric and non-parametric methods
+  -   Finish the interactive scripts marking (by Jan 15)
+  -   Finish the new dataset annotation and analysis (by Jan 31)
+  -   Student assistant from the course (❓)
+      - Two students indicate interest - a sub-question of the dataset, is to process the individual tone vs. the tone in intonation
+      - Related to the question: Variation on which scale? 
+  -   Start to think of an article
+      -   Use the collaborative dataset to explore patterns of variation through both parametric and non-parametric methods
 
 ### Mandarin non-canonical questions (handbook & experiment)
 
--   Focus: Investigate how prosody reflects subtle contextual differences across subtypes of question intonation, and how these interact with different morphosyntactic forms.
--   Zoom in on a specific question type
--   strand 1: Handbook
-    -   A theoretical framework review
+**Zooming into a specific question type**
+
+#### Handbook chapter
+
+-   ✅ (temporarily)
+
+-   A systematic review. Questions inspired through working on the chapter
+    -   Special usages of high/low negations
+    -   Bias effects are not independent form focus effects. , especially verum focus
+
+
+#### Experiment
+
+-   Focus: Investigate how prosody reflects subtle contextual differences across subtypes of question intonation, and how these interact with different morpho-syntactic forms.
+
 -   Current status:
-    -   Draft of handbook chapter almost done
     -   Experiment materials ready, improving the design
--   Next steps:
-    -   Finalise the chapter in the coming weeks.
-    -   Finalise the experimental design in November; begin data collection in December.
 
-## Projects planing
+**Current issue**
 
--   Perception of intonation (eye-tracking): how listeners process variability in intonation, how intonation variation influences tone identification, the role of contextual cues and predictive processing, etc.
+- Context setting; compared to rhetorical questions, where one or two sentences easily trigger the reading, biased questions contexts seem to be more difficult to trigger prosodic marking. This reflects:
+    - In the biased questions contexts, speakers do not necessarily convey this context. Wherereas in rhetorical questions, speakers feel obliged to mark the rhetorical questions (indicating that I'm not really asking for infromation). In the biased questions, speakers may have less pressure to indicate what they've already known.
+    - It could be that the biased question semantic framework is good for analytic clearance, but not really psychological reality. Therefore speakers found it difficult to process such information.
+    - For the conflicting contexts (epistemicP_evidenceN, or epistemicN_evidenceP), the prosody is easy, is also due to the conflicting information seems to prompt the speakers to express them more. 
+
+- Experiment setup
+  - What is not ideal for Gorilla, is the potential risk of not collecting multiple response in one page. (Support question to be sent!!)
+
+**Next steps**
+    -   Finalise the experimental design in early February
+
+#### Extensions
+
+- A course project targeting 'high/low negation'
+
+## Project ideas (planning & on hold)
+
+### The role of intonation in word recognition
+- Perception of intonation (eye-tracking): how listeners process variability in intonation, how intonation variation influences tone identification, the role of contextual cues and predictive processing, etc.
     -   Current status:
         -   Tonal/Word identification (with different intonation & semantic context) experiment plan not good (?)
     -   Plan: Think through in December
 
-### Mandarin question in corpus (put on hold)
+### Mandarin question in corpus 
 
 -   Focus: Investigate intonation patterns in real life questions and tone–intonation interactions (in spontaneous, and theatrical speech)
 -   Current status:
@@ -74,6 +103,10 @@ editor: visual
     -   improve f0 data quality (more robust checking procedure)
     -   Theatrical speech
 
+### Non-canonical questions in theatre speech
+
+
+
 ## Individual variation
 
 Individual difference is important - how did we achieve the meaning?
@@ -81,9 +114,7 @@ Individual difference is important - how did we achieve the meaning?
 Think of the metaphor of perceiving a segment -
 
 ## My keywords
-
+-   The psychological reality of semantic categories
 -   Mental representation
-
 -   Individual variation vs. normalisation
-
 -   
