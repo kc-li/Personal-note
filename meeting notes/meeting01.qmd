@@ -1,0 +1,63 @@
+---
+title: "January Meeting Notes"
+format: html
+editor: visual
+---
+
+## 2026-01-15
+
+-   Priscilla talking about proposals (1h30min)
+
+    -   First experiment
+
+        -   cues independently or orthogonally?
+
+        -   synthesize method: morphing?
+
+        -   but cues need more direction
+
+    -   Second experiment
+
+        -   low-pass filtered speech: remove morpho-semantic speech
+
+    -   Normalisation: the global cues might be more helpful with preceding sentences.
+
+    -   Hi all, following our meeting yesterday, I’ve been looking into Braun et al. (2025) and think about how their methods might relate to the proposals Priscilla presented:
+
+        -   The Active Learning algorhithm (AL) provides a solution to the too many stimuli of 'orthogonal design' we talked about yesterday. They used orthogonal design as well, but identifies cue combinations where the model's prediction of a listener's response is most uncertain and presents those next to maximize learning efficiency - so participants do not need to respond to all the combination
+
+        -   But their predictors are all binary (the cue being present or not) - but think a step further, they in fact encoded the continuum (or at least 'multi-level') into binary, e.g.
+
+            -   nuclear H\* present or not
+
+            -   nuclear L\*+H present or not
+
+            -   nulcear L+H& present or not\
+                ....
+
+        -   'Tune vs. tone' debate discussed here is also relevant to 'local' vs. 'global' discussion - they found interaction but individual tonal events matter more for interpretation, so also supporting 'local' cue more.\
+            But per our discussion, perhaps online-measurement will indicate the global cues are still used, and also providing enough preceding context for normalisation might also encourage the usage of global cues.
+
+-   Talking to Yiya about the chapter (40min)
+
+    -   I will update the figure, check consistency of captions etc.
+
+        -   H% echo (H%-echo? cf. wh-echo), H% epistemic0_evidenceP
+
+        -   Check caption consistency!
+
+-   Talking to Shumian about the chapter (40min)
+
+    -   Shumian改动了一些对polar question的表述； non-canonical questions改成non-canonical usages
+
+    -   Change two expressions: (6)f.
+
+    -   Summary might be a bit problematic, but in the end no change. One point is about the role of context.
+
+    -   理论的人理解the role of context会不太一样。我们在psychology experiment经常讨论的语境的作用，当成一个cue，但是理论的人从编码-解码考虑，是一些形式上的区分，允准句子出现在某些特定的语境中。如果是像quiz questions, self-addressed questions这种没有任何形式标记，完全需要靠使用语境区分的话，那么理论的人会觉得，我们不应该把它们列为一个类别。\
+        最新的理论，是觉得speaker ignorance不够作为non-canonical的标准，而是应该用listener是否能get到speaker
+
+    -   我们non-canonical实验很困难，其实说明了一个问题，就是一些理论框架可能很适用于分析，但是未必具有心理现实性。基于此设计的实验，往往容易陷入不够真实的困扰。比如传达QUD的方式，比如是否有动机传达自己的epistemic/evidential bias。但是如果是要求被试表达情感态度，实验上是很好设计的。这本身也是一个很有意思的点。\
+        所以在设计上，想想什么样的情景下，你更有动机让被试知道你的意图（你想要寻求something的时候）
+
+    -   这是这个实验的有意思的点，reading speech, reading mind

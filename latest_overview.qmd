@@ -1,0 +1,89 @@
+---
+title: "Projects overview"
+format: html
+date: 2025-01-13
+toc: true
+toc-location: left
+number-sections: true
+editor: visual
+---
+
+## Admin
+
+-   Finance new code (both Una Europa, and project)
+    -   e.g. Participants fee for Qi
+
+## Projects ongoing
+
+### Mandarin question in laboratory phonology
+
+-   Focus: Establish the tone–intonation relationship using traditional laboratory phonology approaches, with particular emphasis on variability in realisation.
+
+-   Serves as the foundation for further perception-related investigations. (Lit Review ongoing)
+
+-   Current status:
+
+    -   Original 8 people, using PCA for f0 alone
+        -   TAI proceeding paper, LabPhon abstract (late Jan/Feb)
+    -   New recording done till 15 people, perhaps adding 1 more speaker(?)
+    -   LIBC intern students in the process of checking annotation
+        -   In the process of marking three time points: syllable start; rhyme start; ending
+        -   Upcoming meeting: 2025-01-15, plan for talking about extracting data and check filter f0 qualities
+
+-   Some 'side-products' out of this:
+
+    -   Manual for segmentation (specifically for this task, but could potentially be expanded with other user cases)
+    -   Customizable praat script facilitating checking process
+    -   ShinyAPP to check f0 outliers, either by contour or fPCA data (in developement)
+
+-   Next steps:
+
+    -   Finish the interactive scripts marking (by Jan 15)
+    -   Finish the new dataset annotation and analysis (by Jan 31)
+    -   Start to think of the article
+        -   Use the collaborative dataset to explore patterns of variation through both parametric and non-parametric methods
+
+### Mandarin non-canonical questions (handbook & experiment)
+
+-   Focus: Investigate how prosody reflects subtle contextual differences across subtypes of question intonation, and how these interact with different morphosyntactic forms.
+-   Zoom in on a specific question type
+-   strand 1: Handbook
+    -   A theoretical framework review
+-   Current status:
+    -   Draft of handbook chapter almost done
+    -   Experiment materials ready, improving the design
+-   Next steps:
+    -   Finalise the chapter in the coming weeks.
+    -   Finalise the experimental design in November; begin data collection in December.
+
+## Projects planing
+
+-   Perception of intonation (eye-tracking): how listeners process variability in intonation, how intonation variation influences tone identification, the role of contextual cues and predictive processing, etc.
+    -   Current status:
+        -   Tonal/Word identification (with different intonation & semantic context) experiment plan not good (?)
+    -   Plan: Think through in December
+
+### Mandarin question in corpus (put on hold)
+
+-   Focus: Investigate intonation patterns in real life questions and tone–intonation interactions (in spontaneous, and theatrical speech)
+-   Current status:
+    -   Basic processing of MagicData spontaneous corpus
+    -   Identified three types of particle questions and their associative contexts, poster Dag van de Fonetiek
+-   Plan(?):
+    -   LLM for context marking
+    -   improve f0 data quality (more robust checking procedure)
+    -   Theatrical speech
+
+## Individual variation
+
+Individual difference is important - how did we achieve the meaning?
+
+Think of the metaphor of perceiving a segment -
+
+## My keywords
+
+-   Mental representation
+
+-   Individual variation vs. normalisation
+
+-   
