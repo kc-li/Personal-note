@@ -31,11 +31,11 @@ editor: visual
         -   In the process of marking three time points: syllable start; rhyme start; ending
         -   Meeting on 2025-01-15, plan for talking about extracting data and check filter f0 qualities
 
--   Some 'side-products' out of this:
+**side-products**
 
-    -   Manual for segmentation (specifically for this task, but could potentially be expanded with other user cases)
-    -   Customizable praat script facilitating checking process
-    -   ShinyAPP to check f0 outliers, either by contour or fPCA data (in developement)
+  -   Manual for segmentation (specifically for this task, but could potentially be expanded with other user cases)
+  -   Customizable praat script facilitating checking process
+  -   ShinyAPP to check f0 outliers, either by contour or fPCA data (AI converted earlier script): [InterVisual](https://k-li.shinyapps.io/InterVisual/)
 
 **Next steps:**
 

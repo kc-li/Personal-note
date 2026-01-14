@@ -2,6 +2,12 @@
 title: "Meta reflection"
 ---
 
+## Daily note 
+
+- app.R not yet updated to github, because of existing md file not merged 
+- app.R still need to be fine tuned
+- Tonight still need to prepare the intern processing files
+
 ## Workflow for this site
 
 Using github to keep track of key changes:
@@ -143,4 +149,7 @@ Which aspects of this study are most directly relevant to my research, and which
 
 这项研究中，哪些方面与我的研究最直接相关？哪些部分的可迁移性较低？
 
+## Claude Code with R studio
+
+cf. [this article] https://medium.com/@wuzezhen33/claude-code-is-probably-your-best-bet-to-use-ai-without-leaving-rstudio-ad7cf70931e1
 
