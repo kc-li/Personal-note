@@ -1,5 +1,7 @@
 # Quarto output
 docs/
+_site/
+index_files/
 
 # RStudio / R
 .Rproj.user/

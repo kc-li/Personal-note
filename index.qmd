@@ -2,11 +2,9 @@
 title: "Meta reflection"
 ---
 
-## Daily note 
+## Note for the next work session
 
-- app.R not yet updated to github, because of existing md file not merged 
-- app.R still need to be fine tuned
-- Tonight still need to prepare the intern processing files
+- individual variation topic exploration
 
 ## Workflow for this site
 

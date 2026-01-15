@@ -4,7 +4,7 @@ format: html
 editor: visual
 ---
 
-## 2026-01-15
+## 2026-01-13
 
 -   Priscilla talking about proposals (1h30min)
 
@@ -21,22 +21,6 @@ editor: visual
         -   low-pass filtered speech: remove morpho-semantic speech
 
     -   Normalisation: the global cues might be more helpful with preceding sentences.
-
-    -   Hi all, following our meeting yesterday, I’ve been looking into Braun et al. (2025) and think about how their methods might relate to the proposals Priscilla presented:
-
-        -   The Active Learning algorhithm (AL) provides a solution to the too many stimuli of 'orthogonal design' we talked about yesterday. They used orthogonal design as well, but identifies cue combinations where the model's prediction of a listener's response is most uncertain and presents those next to maximize learning efficiency - so participants do not need to respond to all the combination
-
-        -   But their predictors are all binary (the cue being present or not) - but think a step further, they in fact encoded the continuum (or at least 'multi-level') into binary, e.g.
-
-            -   nuclear H\* present or not
-
-            -   nuclear L\*+H present or not
-
-            -   nulcear L+H& present or not\
-                ....
-
-        -   'Tune vs. tone' debate discussed here is also relevant to 'local' vs. 'global' discussion - they found interaction but individual tonal events matter more for interpretation, so also supporting 'local' cue more.\
-            But per our discussion, perhaps online-measurement will indicate the global cues are still used, and also providing enough preceding context for normalisation might also encourage the usage of global cues.
 
 -   Talking to Yiya about the chapter (40min)
 
@@ -61,3 +45,11 @@ editor: visual
         所以在设计上，想想什么样的情景下，你更有动机让被试知道你的意图（你想要寻求something的时候）
 
     -   这是这个实验的有意思的点，reading speech, reading mind
+
+## 2026-01-15
+
+-   Meeting with Interns
+
+    -   Task 2, post-processing the marked textgrid files
+
+    -   Some difficulties cases from marking: lin, mo, mostly due to the lack of changes in the signal.
