@@ -1,0 +1,515 @@
+---
+title: "Intonation perception"
+---
+
+
+## WoS enqury files
+Step0: Processing WoS enquery
+```{r}
+# --- Packages ---
+library(readr)
+library(dplyr)
+library(stringr)
+library(tidyr)
+
+# --- Input files (your uploaded paths) ---
+dir_path <- "./intonation perception enquery"
+
+files <- list.files(
+  path = dir_path,
+  pattern = "\\.txt$",
+  full.names = TRUE
+)
+
+files
+
+# --- Helper: read one WoS tab-delimited txt, add a source_query label ---
+read_wos_txt <- function(path) {
+  # WoS exports are typically tab-delimited with header row.
+  # quote = "" helps when text has quotes; locale handles encoding.
+  df <- read_tsv(
+    file = path,
+    col_types = cols(.default = col_character()),
+    progress = FALSE,
+    quote = "",
+    locale = locale(encoding = "UTF-8")
+  )
+
+  # derive a query label from filename (for provenance)
+  src <- basename(path) %>%
+    str_remove("\\.txt$") %>%
+    str_replace_all("\\s+", " ")
+
+  df %>%
+    mutate(source_query = src)
+}
+
+# --- Helper: make a robust key for title-based matching ---
+norm_title <- function(x) {
+  x %>%
+    str_to_lower() %>%
+    str_replace_all("[^a-z0-9]+", " ") %>%
+    str_squish()
+}
+
+# --- Read + stack ---
+raw <- bind_rows(lapply(files, read_wos_txt))
+
+# --- Keep / rename the fields you care about (WoS tags) ---
+# Common WoS fields:
+# TI = Title; AU = Authors; PY = Year; SO = Source (journal); AB = Abstract
+# DE = Author Keywords; ID = Keywords Plus; DI = DOI; UT = WoS Accession Number
+dat <- raw %>%
+  transmute(
+    title   = TI,
+    authors = AU,
+    year    = suppressWarnings(as.integer(PY)),
+    journal = SO,
+    abstract = AB,
+    author_keywords = DE,
+    keywords_plus   = ID,
+    doi = DI,
+    ut  = UT,
+    source_query
+  )
+
+# --- Basic cleaning ---
+dat_clean <- dat %>%
+  mutate(
+    doi = str_to_lower(str_trim(doi)),
+    doi = na_if(doi, ""),
+    ut  = str_trim(ut),
+    ut  = na_if(ut, ""),
+    title = str_squish(title),
+    title_norm = norm_title(title),
+    # optional: first author (often useful)
+    first_author = if_else(!is.na(authors) & authors != "",
+                           str_trim(str_split(authors, ";", simplify = TRUE)[,1]),
+                           NA_character_)
+  )
+
+# --- De-duplication strategy (recommended for WoS exports) ---
+# 1) If DOI exists -> dedup by DOI
+# 2) Else if UT exists -> dedup by UT (WoS unique id)
+# 3) Else -> dedup by (normalized title + year)
+#
+# Keep the *first* instance, but preserve provenance by collapsing source_query.
+dat_grouped <- dat_clean %>%
+  mutate(
+    dedup_key = case_when(
+      !is.na(doi) ~ paste0("doi:", doi),
+      is.na(doi) & !is.na(ut) ~ paste0("ut:", ut),
+      TRUE ~ paste0("ty:", title_norm, ":", if_else(is.na(year), "NA", as.character(year)))
+    )
+  ) %>%
+  group_by(dedup_key) %>%
+  # combine source_query if the same record appeared in multiple query exports
+  mutate(source_query_all = paste(sort(unique(source_query)), collapse = " | ")) %>%
+  ungroup()
+
+# identify duplicates (anything beyond the first row in each key)
+duplicates <- dat_grouped %>%
+  group_by(dedup_key) %>%
+  mutate(dup_rank = row_number()) %>%
+  ungroup() %>%
+  filter(dup_rank > 1)
+
+# keep unique master
+master <- dat_grouped %>%
+  group_by(dedup_key) %>%
+  slice(1) %>%
+  ungroup() %>%
+  select(
+    title, authors, first_author, year, journal,
+    abstract, author_keywords, keywords_plus,
+    doi, ut,
+    source_query = source_query_all,
+    dedup_key
+  )
+
+# --- Write outputs ---
+write_csv(master, "wos_master_dedup.csv", na = "")
+write_csv(duplicates, "wos_duplicates.csv", na = "")
+
+message("Done! Wrote: wos_master_dedup.csv and wos_duplicates.csv")
+```
+## processing the AI round 1 file
+
+```{r}
+# --- 1. 读入 master 文献表 ---
+wos_master <- read_csv(
+  "wos_master_dedup.csv",
+  col_types = cols(.default = col_character())
+)
+
+# --- 2. 统一 / 选择 AI 输入所需列 ---
+# 兼容 WoS 不同导出字段名（keywords 可能来自不同列）
+ai_input <- wos_master %>%
+  transmute(
+    title = title,
+    abstract = abstract,
+    keywords = coalesce(author_keywords, keywords_plus)
+  )
+
+# --- 3. 生成 AI 需要填写的空列 ---
+ai_ready <- ai_input %>%
+  mutate(
+    relevance = NA_character_,
+    relevance_reason = NA_character_,
+
+    tags = NA_character_,
+
+    research_question = NA_character_,
+    method = NA_character_,
+    key_claim_about_representation = NA_character_,
+    notes = NA_character_
+  )
+
+# --- 4. 可选：给每篇文章一个稳定的 ID（强烈推荐） ---
+ai_ready <- ai_ready %>%
+  mutate(
+    paper_id = sprintf("P%04d", row_number())
+  ) %>%
+  relocate(paper_id, .before = title)
+
+# --- 5. 导出 AI-ready 文件 ---
+write_csv(
+  ai_ready,
+  "wos_ai_round1_input.csv",
+  na = ""
+)
+
+message("Done! File written: wos_ai_round1_input.csv")
+```
+```{r}
+library(readr)
+library(dplyr)
+library(stringr)
+
+# ---------- helper ----------
+norm_title <- function(x) {
+  x %>%
+    str_to_lower() %>%
+    str_replace_all("[^a-z0-9]+", " ") %>%
+    str_squish()
+}
+
+# ---------- read files ----------
+wos_master <- read_csv(
+  "wos_master_dedup.csv",
+  col_types = cols(.default = col_character())
+)
+
+ai_round1 <- read_csv(
+  "wos_ai_round1_input.csv",
+  col_types = cols(.default = col_character())
+)
+
+# ---------- add join key ----------
+wos_master_keyed <- wos_master %>%
+  mutate(title_norm = norm_title(title))
+
+ai_round1_keyed <- ai_round1 %>%
+  mutate(title_norm = norm_title(title))
+
+# ---------- prepare mapping (ensure uniqueness) ----------
+ai_map <- ai_round1_keyed %>%
+  select(paper_id, title_norm) %>%
+  distinct()
+
+# detect problematic duplicates in AI table
+ai_key_dups <- ai_map %>%
+  count(title_norm) %>%
+  filter(n > 1)
+
+# ---------- join paper_id back to master ----------
+joined <- wos_master_keyed %>%
+  left_join(ai_map, by = "title_norm")
+
+# ---------- diagnostics ----------
+missing <- joined %>% filter(is.na(paper_id))
+
+# mark join status for inspection
+joined <- joined %>%
+  mutate(
+    join_status = if_else(is.na(paper_id), "unmatched", "matched")
+  ) %>%
+  select(-title_norm)
+
+message("Rows in master without paper_id after join: ", nrow(missing))
+message("Duplicate title_norm keys in AI table: ", nrow(ai_key_dups))
+
+# ---------- write outputs ----------
+write_csv(joined, "wos_master_with_paper_id.csv", na = "")
+
+# optional diagnostic files
+if (nrow(missing) > 0) {
+  write_csv(missing, "join_unmatched_master_rows.csv", na = "")
+}
+if (nrow(ai_key_dups) > 0) {
+  write_csv(ai_key_dups, "join_ai_key_duplicates.csv", na = "")
+}
+
+message("Done! Wrote wos_master_with_paper_id.csv")
+```
+
+
+
+
+## AI-interaction R1
+```
+# Round 1: Relevance Screening (CSV Batch Processing)
+
+## Role
+You are a researcher in **speech processing, spoken word recognition, and prosody–tone interaction**.
+
+---
+
+## Task
+You will be given a **CSV file** in which each row corresponds to **one paper**.  
+The CSV contains at least the following columns:
+
+- `title`
+- `abstract`
+- `keywords`
+
+Your task is to assess **each paper independently** and determine whether it is **directly or indirectly relevant** to the following research question:
+
+> **Does sentence-level intonation or prosody influence the processing or mental representation of lexical tone?**
+
+---
+
+## Instructions (Very Important)
+For **each row** in the CSV:
+
+1. Read only the content in `title`, `abstract`, and `keywords`.
+2. Decide the paper’s relevance according to the criteria below.
+3. **Fill in (or overwrite if already present) the following two columns**:
+   - `relevance`
+   - `relevance_reason`
+
+Do **not** modify any other columns.
+
+---
+
+## Relevance Criteria
+
+### Yes
+- The paper directly studies **lexical tone processing or representation**
+- **AND** explicitly involves **intonation, sentence prosody, discourse prosody, or prosodic context**
+
+### Maybe
+- The paper does **not** focus on tone languages  
+- **BUT** proposes theories, models, or empirical findings on **spoken word recognition, prosodic integration, or lexical processing** that are plausibly transferable to tonal processing
+
+### No
+- The paper is unrelated to **prosody, intonation, lexical tone, or spoken word recognition**
+
+---
+
+## Output Requirements (Must Be Followed Strictly)
+
+- Return the **same CSV file** with the same rows and ordering
+- Add or fill **only** the following columns:
+
+relevance
+relevance_reason
+
+- Allowed values for `relevance`:
+
+Yes
+Maybe
+No
+
+- `relevance_reason` must be **one concise sentence** explaining the decision
+- Do **not** add extra commentary, summaries, or formatting outside the CSV
+
+---
+
+## Important Notes
+- Judge each paper independently
+- Do not assume relevance based on journal, authors, or reputation
+- If uncertain but potentially useful for theory, choose **Maybe**
+
+---
+
+## Begin Processing
+Begin processing the uploaded CSV now.
+
+```
+
+```{r}
+wos_round1_output <- read_csv(
+  "wos_ai_round1_output.csv",
+  col_types = cols(.default = col_character())
+)
+
+wos_round1_output <- wos_round1_output %>%
+  arrange(desc(relevance))
+
+table(wos_round1_output$relevance)
+```
+
+## AI-interaction R2
+
+```
+# Round 2: Thematic Tagging (CSV Batch Processing)
+
+## Role
+You are a researcher in **speech processing, spoken word recognition, and prosody–tone interaction**, with expertise in lexical tone and prosodic processing.
+
+---
+
+## Task
+You will be given a **CSV file** in which each row corresponds to **one paper**.  
+The CSV already contains relevance judgments from Round 1.
+
+Your task is to assign **thematic tags** to each paper based on its content.
+
+---
+
+## Input Columns
+For each row, use **only** the following columns as input:
+
+- `title`
+- `abstract`
+- `keywords`
+- `relevance`
+
+---
+
+## Instructions (Very Important)
+
+For **each row** in the CSV:
+
+1. **Only assign tags if `relevance` is `Yes` or `Maybe`.**
+2. If `relevance` is `No`, leave the `tags` column **empty**.
+3. For eligible rows, assign **up to three (maximum)** thematic tags.
+4. Tags must be selected **only from the predefined list below**.
+5. **Write the tags into the `tags` column**, using **semicolon-separated values**.
+6. Do **not** modify any other columns.
+
+---
+
+## Tag Set (Choose from This List Only)
+
+- `intonation_tone_interaction`  
+- `lexical_tone_processing`  
+- `spoken_word_recognition_general`  
+- `prosodic_context_effects`  
+- `tone_representation`  
+- `normalization_variability`  
+- `stress_only_non_tonal`  
+- `method_eye_tracking`  
+- `method_eeg`  
+- `method_behavioral`  
+- `theoretical_model`
+
+---
+
+## Tagging Guidelines
+
+- Assign **conceptual tags** (e.g. `tone_representation`, `intonation_tone_interaction`) based on the paper’s **research focus**.
+- Assign **method tags** (e.g. `method_eye_tracking`) if the method is clearly stated or implied.
+- If the paper concerns **only stress languages** but is theoretically relevant, include `stress_only_non_tonal`.
+- Prefer **fewer, more precise tags** over many vague ones.
+- If none of the tags apply clearly, leave the `tags` cell empty.
+
+---
+
+## Output Requirements (Must Be Followed Strictly)
+
+- Return the **same CSV file** with the same rows and ordering.
+- Add or fill **only** the following column:
+
+- Tags must be:
+  - Lowercase
+  - Semicolon-separated
+  - Exactly match the tag names provided above
+- Do **not** add explanations, comments, or new columns.
+
+---
+
+## Important Notes
+- Judge each paper independently.
+- Do not infer content beyond what is supported by title, abstract, and keywords.
+- Do not revise relevance judgments from Round 1.
+
+---
+
+## Begin Processing
+Begin processing the uploaded CSV now.
+```
+
+```{r}
+wos_round2_output <- read_csv(
+  "wos_ai_round2_output.csv",
+  col_types = cols(.default = col_character())
+)
+
+wos_round2_output <- wos_round2_output %>%
+  arrange(desc(relevance))
+
+table(wos_round2_output$relevance)
+```
+
+
+## Merge R1 and R2
+```{r}
+# --- input files ---
+ai2 <- read_csv(
+  "wos_ai_round2_output.csv",
+  col_types = cols(.default = col_character())
+)
+
+master <- read_csv(
+  "wos_master_with_paper_id.csv",
+  col_types = cols(.default = col_character())
+)
+
+# --- basic checks ---
+stopifnot("paper_id" %in% names(ai2))
+stopifnot("paper_id" %in% names(master))
+
+# paper_id should be unique in master; warn if not
+master_pid_dups <- master %>%
+  count(paper_id) %>%
+  filter(!is.na(paper_id), n > 1)
+
+if (nrow(master_pid_dups) > 0) {
+  warning("master has duplicated paper_id. Join may duplicate rows. See master_pid_dups object.")
+}
+
+# --- avoid duplicate columns after join ---
+# We keep AI2 as the base; from master we only bring columns NOT already in ai2
+cols_to_add <- setdiff(names(master), names(ai2))
+
+master_add <- master %>%
+  select(paper_id, all_of(cols_to_add))
+
+# --- join: keep ai2 row order exactly ---
+out <- ai2 %>%
+  left_join(master_add, by = "paper_id")
+
+# --- diagnostics: which AI rows couldn't be matched to master? ---
+unmatched <- out %>%
+  filter(is.na(paper_id) | !(paper_id %in% master$paper_id))
+
+message("Rows in ai2: ", nrow(ai2))
+message("Rows after join: ", nrow(out))
+message("Unmatched rows (paper_id not found in master): ", nrow(unmatched))
+
+if (nrow(unmatched) > 0) {
+  write_csv(unmatched, "ai2_unmatched_rows.csv", na = "")
+  message("Wrote diagnostics: ai2_unmatched_rows.csv")
+}
+
+# --- write output ---
+write_csv(out, "wos_ai_round2_merged_with_master.csv", na = "")
+message("Done! Wrote: wos_ai_round2_merged_with_master.csv")
+```
+
+### Filter 
+
+Some note:
+

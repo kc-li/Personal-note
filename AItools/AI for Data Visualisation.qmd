@@ -1,0 +1,11 @@
+---
+title: "AI for Data Visualisation"
+---
+
+## Interactive visualisation for scatterplot & contour 
+
+https://k-li.shinyapps.io/InterVisual/
+
+## Interactive visualisation for fPCA results
+
+https://k-li.shinyapps.io/InterVisual-fpca/

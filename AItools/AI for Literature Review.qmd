@@ -1,0 +1,111 @@
+---
+title: "AI for Literature Review"
+---
+
+## Using AI in literature screening & review
+
+-   Locating resources: I still conduct the actual literature search manually to retain control over scope and quality, but use AI to refine and expand search keywords.
+
+    -   Databases to be consulted:
+        -   Google Scholar
+        -   Web of Science
+        -   Scopus
+        -   PsycINFO
+    -   AI usage: generate alternative search terms, synonyms, and related terminology that I might overlook.
+    -   Output: export search results into a structured table (CSV or BibTeX) containing author(s), year, and title.
+
+-   AI-assisted relevance screening
+
+    The compiled table is then processed with AI to conduct a first-pass relevance check based on titles and abstracts, helping to prioritise which papers require closer reading.
+
+-   Structured reading of key papers
+
+For selected core papers, I use tools such as NotebookLLM to focus reading around a fixed set of questions: - Citation - Research question - Data and method - Key findings (with respect to my research topic) - Limitations and open issues
+
+-   Cross-paper comparison AI is further used to compare papers across dimensions (e.g. theoretical assumptions, methods, findings), in order to identify recurring patterns, contradictions, and underexplored areas.
+
+### Potential Reusable AI Prompts for Literature Screening & Review
+
+#### Screening
+
+**Relevance filtering (screening)**
+
+Based on the abstract and keywords, assess whether this paper is highly relevant, potentially relevant, or not relevant to **\[my research topic\]**, and briefly justify your judgment.
+
+请根据摘要和关键词，判断该论文与 **【我的研究主题】** 的相关性（高度相关 / 可能相关 / 不相关），并简要说明理由。
+
+#### Single paper
+
+**Information extraction**
+
+Extract the following information from this article:\
+1) Research question or main hypothesis\
+2) Sample characteristics (language, participants, corpus size, etc.)\
+3) Data and methodology\
+4) Key findings relevant to my research topic\
+5) Limitations and open questions acknowledged by the authors
+
+请从这篇文章中提取以下信息：\
+1）研究问题或核心假设\
+2）样本特征（语言、被试、语料规模等）\
+3）数据与研究方法\
+4）与我的研究主题最相关的主要结论\
+5）作者明确指出的局限性或未解决问题
+
+**Concept clarification** Explain the concept of **XXX** as it is used in **XXX research**, and clarify how it differs from closely related terms.
+
+请解释 **XXX** 在 **XXX 研究领域** 中的含义，并说明它与相关或相近概念的区别。
+
+**Critical reading support**
+
+Identify any implicit assumptions in this paper that are not explicitly justified.
+
+请指出这篇文章中存在但未被明确论证的隐含假设。
+
+#### Multiple papers
+
+**Cross-paper comparison**
+
+Compare the following studies in terms of their theoretical assumptions, methods, and conclusions. Highlight points of convergence and divergence.
+
+请从理论假设、研究方法和主要结论三个方面，对以下研究进行比较，并指出它们之间的一致之处与分歧。
+
+**Pattern detection & synthesis**
+
+Across these studies, identify recurring themes, contradictory findings, and shared methodological patterns.
+
+在这些研究中，请识别反复出现的主题、相互矛盾的结论，以及共同的研究方法模式。
+
+**Methodological reflection**
+
+What methodological choices are most commonly adopted in this line of research, and what potential biases or limitations do they introduce?
+
+在这一研究方向中，最常见的研究方法选择是什么？这些方法可能引入哪些偏差或局限？
+
+**Positioning a study within the field**
+
+How does this study position itself within the existing literature, and what gap does it explicitly or implicitly aim to address?
+
+这项研究在现有文献中如何定位自身？它试图明确或隐含地填补哪些研究空白？
+
+------------------------------------------------------------------------
+
+#### Field reflection
+
+**Gap identification**
+
+Based on this body of literature, what questions remain underexplored or systematically avoided?
+
+基于这一系列文献，目前有哪些问题仍然缺乏系统研究，或被普遍回避？
+
+**Broader Gap**
+
+Assume you are a researcher familiar with **field X**. My review currently covers the following directions: A, B, and C.\
+From the historical development of the field, what important perspectives, traditions, or lines of work might still be missing?
+
+假设你是一位熟悉 **【领域 X】** 的研究者。我的综述目前已涵盖以下方向：A、B、C。\
+从该领域的发展历史与研究脉络来看，可能还遗漏了哪些重要视角、研究传统或路线？
+
+**Bridging to one’s own research** Which aspects of this study are most directly relevant to my research, and which aspects are less transferable?
+
+这项研究中，哪些方面与我的研究最直接相关？哪些部分的可迁移性较低？

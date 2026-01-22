@@ -10,10 +10,14 @@ website:
         text: Home
       - href: latest_overview.qmd
         text: Latest overview
-      - text: Meet notes
+      - text: Meetings
         menu: 
           - href: meeting notes/meeting01.qmd
             text: January
+      - text: AI tools
+        menu:
+          - href: AItools/AI for Literature Review.qmd
+            text: Literature
 
 format:
   html:
