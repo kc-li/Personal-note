@@ -2,7 +2,7 @@
 title: "AI for Data Visualisation"
 ---
 
-## Interactive visualisation for scatterplot & contour 
+## Interactive visualisation for scatterplot & contour
 
 https://k-li.shinyapps.io/InterVisual/
 

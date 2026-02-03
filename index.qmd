@@ -6,15 +6,10 @@ title: "Meta reflection"
 
 -   Prepare the intern task
 
-The pitch can be checked in a few ways:
-
-- pitch tracking figure (individual)
-- pitch data (collective & interaction plotting)
-- fpca results
-
-I would filter out the files that needs to be checked, and then ask the intern to fix the 'x' label of these files. 
-
-I would also write some simple code for them to explore the dataset. 
+  - According to red files, move the files to a check folder (need to check in recording data recursively) [For interns to run prosodyPro to check x label]
+  - For each intern, exclude the data in red & yellow.txt, generate a clean dataset for them
+  - Write some simple exploration code
+  - Write documentation
 
 In addition, I would like to compare the inter-rater alignment regarding the common set. 
 

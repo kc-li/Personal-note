@@ -1,0 +1,121 @@
+---
+title: "Tone-Intonation Processing"
+format: revealjs
+---
+
+## Comparing tone and intonation processing
+
++-----------------------------+---------------------------------+------------------------------------------------------+
+| Dimension                   | Tone                            | Intonation                                           |
++=============================+=================================+======================================================+
+| 'Categorical perception'\   | Categorical                     | (Zhumadian) Mandarin: gradient                       |
+| (Gussenhoven)               |                                 |                                                      |
+|                             |                                 | Cantonese: discrete                                  |
+|                             |                                 |                                                      |
+|                             |                                 | English: discrete                                    |
++-----------------------------+---------------------------------+------------------------------------------------------+
+| 'Tone identification'       |                                 |                                                      |
+|                             |                                 |                                                      |
+| (Liu Min, Kung)             |                                 |                                                      |
++-----------------------------+---------------------------------+------------------------------------------------------+
+| 'Intonation identification' |                                 |                                                      |
+|                             |                                 |                                                      |
+| (Liu Min, Kung)             |                                 |                                                      |
++-----------------------------+---------------------------------+------------------------------------------------------+
+| Why is it important         | know what is being talked about | know the intention of the speaker and what is needed |
++-----------------------------+---------------------------------+------------------------------------------------------+
+|                             |                                 |                                                      |
++-----------------------------+---------------------------------+------------------------------------------------------+
+|                             |                                 |                                                      |
++-----------------------------+---------------------------------+------------------------------------------------------+
+
+## Carlos' experiment
+
++--------------------------------------+---------------------------------------------------+
+| Zhumadian Mandarin                   | Cantonese                                         |
+|                                      |                                                   |
+| fall & rise                          | level, falling, rising                            |
++======================================+===================================================+
+| ![](images/clipboard-1450337379.png) | ![](images/clipboard-1750998772.png){width="290"} |
++--------------------------------------+---------------------------------------------------+
+
+> More strikingly, the intonation contrast relying on pitch register in ZM and, by a reasonable extension, in Standard Mandarin, is perceived gradiently, while that relying on pitch shape in Cantonese is perceived discretely.
+>
+> This is the first result to our knowledge that shows the phonological relevance of the manner in which intonational contrasts are phonetically specified. Our general interpretation of this result is that gradience in speech pitch signaling is not tonally encoded, while discreteness always is.
+
+I'm mostly interested in the cross-linguistic difference that have been captured by this paradigm.\
+Between tone and non-tonal; between Mandarin and Cantonese
+
+-   Charlie talks about two views about the difference
+
+    -   pure phonetic distance; in Cantonese, the intonation category induces a big difference.
+
+    -   position difference, Cantonese intonation takes up a special locus (final part)\
+        *check* Cantonese question: how speaking Cantonese influence this pattern?
+
+### Reinterpretation of the 'CP' scheme
+
+-   Following McMurray, there is no **categorical perception** in the strong sense (i.e. perceptual warping or loss of within-category detail). What exists is **categorization operating over continuous perceptual representations**.
+
+    -   The interpretation of this work is hence not *whether* categories exist, but **how robust different categories are across languages and domains**.
+
+-   Languages differ in the **functional robustness** of particular categories (how strongly categorization commits to certain dimensions):
+
+    -   In Mandarin, **lexical tone categories** are more robust than intonation.
+    -   In Cantonese, **intonational categories** are more robust than tone.
+    -   This robustness seems to correspond to **Production** (stability, dispersion, cue weighting)
+
+-   Question: 那么在process tone vs. intonation的过程中，就没有任何区别吗？\
+    Does processing tone vs. intonation involve different mechanisms, or the same continuous perceptual machinery with different weighting, learning histories, and functional pressures?
+
+-   Although the classical CP paradigm is deeply flawed as evidence for perceptual warping, it may still capture **meaningful cross-linguistic differences** at the level of categorization behavior
+
+    -   <div>
+
+        > McMurray (2022): Forced-choice identification tasks are not problematic for assessing boundary shifts (e.g., trading relations and perceptual learning paradigms).
+
+        </div>
+
+## Word recognition
+
+-   There are perhaps two ways
+
+(working on the list)
+
+Some thoughts related to exemplar theory:
+
+What are the key predictions from the exemplar theory? (esp. different from the phonological view?)
+
+-   frequency-related phenomena
+
+In the recent word-recognition work, how are exemplar theory being used?
+
+Accessing the mental lexicon may be different from the question the mental representation of the lexicon (how they are stored)
+
+\[Oxford handbook of mental lexicon\](<https://academic.oup.com/edited-volume/38859?login=true>)
+
+\[Spoken word recognition\](<https://academic.oup.com/edited-volume/38859/chapter/337912819>) by James S. Magnuson, Anne Marie Crinnion
+
+-   we should start from the real signal
+
+-   Review the history: Corhort, NAM, TRACE; shortlist and merge A & B
+
+    -   TRACE does not provide clear definition of competitors
+
+    -   TRACE also cannot explain the 'andronemes' (TUG ativates GUT)
+
+    -   TRACE explains a range of phonemena
+
+-   Episodic accounts avoid mentioning normlisation!!
+
+\[Word-meaning access: *The one-to-many mapping from form to meaning*\](<https://academic.oup.com/edited-volume/38859/chapter/337912953>)
+
+Thought: different meaning correlates - whether they influence word recognition
+
+他特别惊讶的说：妈
+
+她纠正刚刚的错误说：妈
+
+## Prosodic information in Spoken word recognition
+
+> Most aspects of prosody are absent from current models, with one salient exception: the metrical segmentation strategy (MSS) proposed by Cutler and Norris (1988), and integrated into the Shortlist A model by Norris, McQueen, and Cutler (1995) (Magnuson & Crinnion, 2022)
