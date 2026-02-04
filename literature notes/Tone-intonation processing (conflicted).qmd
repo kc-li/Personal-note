@@ -1,0 +1,69 @@
+---
+title: "Tone-Intonation Processing"
+format: revealjs
+---
+
+## Comparing tone and intonation processing
+
++-----------------------------+-------------+--------------------------------+
+| Dimension                   | Tone        | Intonation                     |
++=============================+=============+================================+
+| 'Categorical perception' \  | Categorical | (Zhumadian) Mandarin: gradient |
+| (Gussenhoven)               |             |                                |
+|                             |             | Cantonese: discrete            |
+|                             |             |                                |
+|                             |             | English: discrete              |
++-----------------------------+-------------+--------------------------------+
+| 'Tone identification'       |             |                                |
+|                             |             |                                |
+| (Liu Min, Kung)             |             |                                |
++-----------------------------+-------------+--------------------------------+
+| 'Intonation identification' |             |                                |
+|                             |             |                                |
+| (Liu Min, Kung)             |             |                                |
++-----------------------------+-------------+--------------------------------+
+|                             |             |                                |
++-----------------------------+-------------+--------------------------------+
+|                             |             |                                |
++-----------------------------+-------------+--------------------------------+
+|                             |             |                                |
++-----------------------------+-------------+--------------------------------+
+
+## Carlos' experiment 
+
++--------------------------------------+---------------------------------------------------+
+| Zhumadian Mandarin                   | Cantonese                                         |
+|                                      |                                                   |
+| fall & rise                          | level, falling, rising                            |
++======================================+===================================================+
+| ![](images/clipboard-1450337379.png) | ![](images/clipboard-1750998772.png){width="290"} |
++--------------------------------------+---------------------------------------------------+
+
+> More strikingly, the intonation contrast relying on pitch register in ZM and, by a reasonable extension, in Standard Mandarin, is perceived gradiently, while that relying on pitch shape in Cantonese is perceived discretely.
+>
+> This is the first result to our knowledge that shows the phonological relevance of the manner in which intonational contrasts are phonetically specified. Our general interpretation of this result is that gradience in speech pitch signaling is not tonally encoded, while discreteness always is.
+
+The question I need to answer:
+
+What does the categorical perception mean? Not to talk about phonology, nor categorical/gradience per se.
+
+I'm mostly interested in the cross-linguistic difference that have been captured by this paradigm. \
+Between tone and non-tonal; between Mandarin and Cantonese
+
+-   Charlie talks about two views about the difference
+
+    -   pure phonetic distance; in Cantonese, the intonation category induces a big difference.
+
+    -   position difference, Cantonese intonation takes up a special locus (final part)\
+        *check* Cantonese question: how speaking Cantonese influence this pattern?
+
+-   Mandarin SFP, 可能也会体现这两种categorical perception，因为intonation也有位置\
+    谁喜欢上课呢 H%\
+    谁喜欢上课呢 L%
+
+-   form携带不同information这一点，这些information会互相干扰，就像exemplar theory一样，是被默认的。\
+    -\> 看看prosodic probablistic view， 是如何argue的（一定是这样的）
+
+-   Manda
+
+    -   

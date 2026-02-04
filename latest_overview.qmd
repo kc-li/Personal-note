@@ -1,139 +1,161 @@
 ---
-title: "Projects overview"
-format: html
-date: 2025-01-13
-toc: true
+title: Projects overview
+format: docx
+date: 2025-02-04
+author: Katrina
+toc: false
 toc-location: left
-number-sections: true
-editor: visual
+number-sections: false
 ---
 
-## Admin
+<!-- ## Admin -->
 
--   Finance new code (both Una Europa, and VICI project)
-    -   e.g. Participants fee for Qi & Yuchen
+<!-- -   Finance new code (both Una Europa, and VICI project) -->
+<!--     -   e.g. Participants fee for Qi & Yuchen -->
 
-## Projects ongoing
+<!-- ## Projects ongoing -->
 
 ### Mandarin question in laboratory phonology
 
--   Focus: Establish the tone–intonation relationship using traditional laboratory phonology approaches, with particular emphasis on variability in realisation.
+-   Focus: Establish the tone–intonation relationship using traditional laboratory phonology approaches, with particular emphasis on individual variability in intonation realisation.
 
--   Serves as the foundation for further perception-related investigations. (Lit Review ongoing)
+-   Serves as the foundation for further perception-related investigations.
 
-**Current status**
+#### Completed ✅
 
--   Original **8** people, using PCA for f0 alone
-    -   ✅ TAI proceeding paper, LabPhon abstract (notification late Jan/Feb)\
--   New recording done till **15** people, perhaps adding 1 more speaker(❓)
--   LIBC intern students in the process of checking annotation
-    -   Almost done with marking three time points: syllable start; rhyme start; ending
-    -   Weekly meting schedule, last meeting on 2025-01-15, talking about extracting data
+-   2024 Nov-Dec: record 8 people, initial analysis, prepare TAI abstract
+-   2025 Jan-Mar: processing with LIBC interns
+-   2025 May-June: TAI presentation; LIBC poster
+-   2025 August: TAI proceeding
+-   2025 Nov-Dec: collaboration meetings; record 7 people
+-   2026 Jan: processing new recording with LIBC interns
 
-**side-products**
+**Side-products**
 
 -   Manual for segmentation (specifically for this task, but could potentially be expanded with other user cases) - 🧐 Perhaps ask your intern to accummulate some cases!
--   ShinyAPP to check f0 outliers, either by contour or fPCA data (AI converted earlier script): [InterVisual](https://k-li.shinyapps.io/InterVisual/)
--   ShinyAPP to visualise PCA results -\> from PCA scores to directly show reconstructed contours, [in development.]{.underline}
--   Customized praat script facilitating checking process
+-   ShinyAPP to check f0 outliers, either by contour or point data: [InterVisual](https://k-li.shinyapps.io/InterVisual/)
+-   ShinyAPP to visualise PCA results (from PCA scores to reconstructed contours): \[InterVisual-PCA\](<https://github.com/kc-li/InterVisual-fpca>)
+-   Customized praat script facilitating checking process.
 
-**Next steps:**
+#### Current status ⏱️
 
--   Finish the new dataset annotation and analysis (by Jan 31)
--   Get in touch with Michele Gubian (❓)
--   Student assistant from the course (❓)
-    -   Two students indicate interest, which have good performance!
-    -   Idea 1 💡: process the citation tone recordings - how is the tone in sentence in relation to the citation format; how is the variation being captured?
-    -   Idea 2 💡: further developing scripts: for abnomality checking/end boudnary detection, etc.
-    -   Or, if you need them on your project!
--   Start to think of an article
-    -   Use the collaborative dataset to explore patterns of variation through both parametric and non-parametric methods
+-   processing the 7 people data
 
-### Mandarin non-canonical questions (handbook & experiment)
+#### Next steps ☑️
 
-#### Handbook chapter
+-   2026 Late Feb & Early March: Get in touch with Tong & Yao: new dataset; update reasults; article plan
 
--   ✅ (temporarily)
+-   2026 April-May: Write the article
 
--   A systematic review. Questions inspired through working on the chapter
+### Non-canonical Q Handbook chapter
 
-    -   Special usages of high/low negations
-    -   Bias effects are not independent form focus effects, especially verum focus.
+-   A systematic review of the landscape. Questions inspired through working on the chapter:
 
-#### Experiment
+
+
+#### Completed ✅
+
+-   2024 Aug-Oct: Syntax, semantics writing
+-   2025 Jan-Apr: recording, prosody, first draft sent out
+-   2025 Sep: new materials and recording, prosody
+-   2025 Dec - 2026 Jan: second draft revising and sent out
+
+#### Current status ⏱️
+
+-   Waiting for the second round review
+
+#### Next steps ☑️
+
+- Finalising
+
+### Non-canonical Q Experiment
 
 -   Focus: Investigate how prosody reflects subtle contextual differences across subtypes of question intonation, and how these interact with different morpho-syntactic forms.
 
--   Current status:
 
-    -   Experiment materials ready, improving the design
+#### Completed ✅
 
-**Current issue**
+-   2025 July-August: Shumian visit, initiate the paln
 
--   Context setting: compared to rhetorical questions, where one or two sentences easily trigger the reading, biased questions contexts seem to be more difficult to trigger prosodic marking. This reflects:
-    -   In the biased questions contexts, speakers do not necessarily convey this context. Wherereas in rhetorical questions, speakers feel obliged to mark the rhetorical questions (indicating that I'm not really asking for infromation). In the biased questions, speakers may have less pressure to indicate what they've already known.
-    -   It could be that the biased question semantic framework is good for analytic clearance, but not really psychological reality. Therefore speakers found it difficult to process such information.
-    -   For the conflicting contexts (epistemicP_evidenceN, or epistemicN_evidenceP), the prosody is easy, is also due to the conflicting information seems to prompt the speakers to express them more.
--   Experiment setup
-    -   What is not ideal for Gorilla, is the potential risk of not collecting multiple response in one page. (Consult the support team)
+-   2025 August-November: Experiment materials, online implementation and pilot
 
-**Next steps**: Finalise the experimental design in early February
+#### Current status ⏱️
 
--   Improvement over the context design to better motivate the speakers to absorb context information
+- A auditory rating 
 
--   Improvement over the experiment design to elicit more natural response
+#### Next steps ☑️
 
--   A course project targeting 'high/low negation' (❓)
-
-## Project ideas
-
-### The role of intonation in word recognition
-
--   Tone recognition is relatively robust. To what extent does intonation influence lexical tone processing during word recognition?
-
-    -   Audio: 你看到的字是。/你看到的字是妈？\
-        Visual World paradigm: 妈 麻 骂 猫\
-        Judgment：which intonation do you hear?
-
-    -   Backround
-
-        -   Parallel activation: tone, intonation, and segmental information become available more or less simultaneously.
-
-        -   Immediate interaction, tone and intonation interact immediately
-
-        -   In Mandarin, tone processing easier and more robust than intonation ('intonation gives way to tone.')
-
-            -   higher accuracy
-
-            -   shorter reaction time
-
-        -   When tone and intonation are in conflict: Cantonese low tone & question intonation causes difficulty in processing, whereas Mandarin T4 & question makes it easier to process
-
--   **Speaker variability:** How do listeners cope with variation in intonation realization across speakers? Can they correctly decode a speaker’s communicative intention—even upon first encounter?
-
-    -   Introduce at least 2 speakers voice (especially w.r.t. T4 strategy)
-
--   **Predictive context:** Does contextual information help listeners anticipate upcoming intonation? In natural speech, listeners often infer whether a speaker is likely to ask for information or provide it. Knowing the likely intonational contour in advance may facilitate more accurate and faster lexical activation.
-
-    -   Expanding audio: 我想说，你看到的字是妈。/我想问，你看到的字是妈？
+- 2026 Feb: auditory rating experiment materials; set up
+- 2026 Mar: rating experiment
+- 2026 Apr-May: production data collection
+- 2026 Jun-Aug: production data analysis and plan
 
 ### Mandarin question in corpus
 
--   Focus: Investigate intonation patterns in real life questions and tone–intonation interactions (in spontaneous, and theatrical speech)
--   Current status:
-    -   Basic processing of MagicData spontaneous corpus
-    -   Identified three types of particle questions and their associative contexts, poster Dag van de Fonetiek
--   Plan(?):
-    -   LLM for context marking
-    -   improve f0 data quality (more robust checking procedure)
-    -   Theatrical speech
+- Investigate tone–intonation interactions in spontaneous speech, as well as the question usages (morphosyntactic vs. prosodic) in real life. 
 
-### Non-canonical questions in theatre speech
+#### Completed ✅
 
-## My keywords
+- 2024 Nov: trial processing of MagicData corpus
+- 2025 Mar-Jun: detailed cleaning and checking of corpus
+- 2025 Sep-Oct: turn-taking processing; prosodic patterns of three SFPs, for Dag van de Fonetiek
 
--   The psychological reality of semantic categories
--   Mental representation
--   Individual variation vs. normalisation
-    -   Individual difference is important - how did we achieve the meaning?
-    -   Think of the metaphor of perceiving a segment -
+#### Current status ⏱️
+-   On hold
+
+
+
+
+
+<!-- ## Project ideas -->
+
+<!-- ### The role of intonation in word recognition -->
+
+<!-- -   Tone recognition is relatively robust. To what extent does intonation influence lexical tone processing during word recognition? -->
+
+<!--     -   Audio: 你看到的字是。/你看到的字是妈？\ -->
+<!--         Visual World paradigm: 妈 麻 骂 猫\ -->
+<!--         Judgment：which intonation do you hear? -->
+
+<!--     -   Backround -->
+
+<!--         -   Parallel activation: tone, intonation, and segmental information become available more or less simultaneously. -->
+
+<!--         -   Immediate interaction, tone and intonation interact immediately -->
+
+<!--         -   In Mandarin, tone processing easier and more robust than intonation ('intonation gives way to tone.') -->
+
+<!--             -   higher accuracy -->
+
+<!--             -   shorter reaction time -->
+
+<!--         -   When tone and intonation are in conflict: Cantonese low tone & question intonation causes difficulty in processing, whereas Mandarin T4 & question makes it easier to process -->
+
+<!-- -   **Speaker variability:** How do listeners cope with variation in intonation realization across speakers? Can they correctly decode a speaker’s communicative intention—even upon first encounter? -->
+
+<!--     -   Introduce at least 2 speakers voice (especially w.r.t. T4 strategy) -->
+
+<!-- -   **Predictive context:** Does contextual information help listeners anticipate upcoming intonation? In natural speech, listeners often infer whether a speaker is likely to ask for information or provide it. Knowing the likely intonational contour in advance may facilitate more accurate and faster lexical activation. -->
+
+<!--     -   Expanding audio: 我想说，你看到的字是妈。/我想问，你看到的字是妈？ -->
+
+
+<!-- ## My keywords -->
+
+<!-- -   The psychological reality of semantic categories -->
+<!-- -   Mental representation -->
+<!-- -   Individual variation vs. normalisation -->
+<!--     -   Individual difference is important - how did we achieve the meaning? -->
+<!--     -   Think of the metaphor of perceiving a segment - -->
+
+
+<!-- ### Non-canonical questions -->
+
+<!-- -   Context setting: compared to rhetorical questions, where one or two sentences easily trigger the reading, biased questions contexts seem to be more difficult to trigger prosodic marking. This reflects: -->
+<!--     -   In the biased questions contexts, speakers do not necessarily convey this context. Wherereas in rhetorical questions, speakers feel obliged to mark the rhetorical questions (indicating that I'm not really asking for infromation). In the biased questions, speakers may have less pressure to indicate what they've already known. -->
+<!--     -   It could be that the biased question semantic framework is good for analytic clearance, but not really psychological reality. Therefore speakers found it difficult to process such information. -->
+<!--     -   For the conflicting contexts (epistemicP_evidenceN, or epistemicN_evidenceP), the prosody is easy, is also due to the conflicting information seems to prompt the speakers to express them more. -->
+<!-- -   Experiment setup -->
+<!--     -   What is not ideal for Gorilla, is the potential risk of not collecting multiple response in one page. (Consult the support team) -->
+<!--     -   Special usages of high/low negations -->
+<!--     -   Bias effects are not independent form focus effects, especially verum focus. -->
